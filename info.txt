@@ -1,0 +1,9 @@
+
+MIS部署SQA环境。
+10.6.11.99	root/ht00@pass
+发布目录
+/usr/local/zcgl/apache-tomcat-8.5.23
+
+Jenkins地址：http://172.20.13.180:8080/jenkins/configureSecurity/
+ITD部署用jenkins做。参考现有job配置一个自动部署job。不要删除现有JOB。
+用户名/密码；个人名字/111111
