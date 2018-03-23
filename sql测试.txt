@@ -1,0 +1,125 @@
+CREATE TABLE TEST.STUDENT
+(
+	NAME VARCHAR(20),
+	CLASS VARCHAR(20),
+	SCORE INT
+)
+
+数据库题：
+
+1、SELECT (NAME,CLASS,SCORE) FROM  TEST.STUDENT
+WHERE NAME = 'jessie'
+
+2、DELETE FROM TEST.STUDENT WHERE NAME = 'jessie'
+
+3、SELECT COUNT(*) FROM TEST.STUDENT 
+WHERE CLASS = 'Chemistry' AND SCORE < 60
+
+4、SELECT COUNT(*) FROM TEST.STUDENT
+
+5、SELECT NAME FROM TEST.STUDENT 
+ORDER BY COUNT(SCORE) DESC
+
+6、SELECT NAME FROM
+ (SELECT MAX(SCORE) FROM TEST.STUDENT)
+
+7、SELECT NAME FROM TEST.STUDENT
+WHERE NAME NOT IN (SELECT NAME FROM TEST.STUDENT
+WHERE SCORE >= 60)
+
+
+===============================
+Java题：
+1、
+Array arr = NumberArrayBuilder.getRandomNumberArray();
+function bubbleSort(arr){
+	for(int i=1;i<arr.length;i++){
+		for(int j = 1;j<arr.length-i-1;j++){
+			if(arr[j]<arr[j+1]){
+				temp = arr[j+1];
+				arr[j+1] = arr[j];
+				arr[j] = temp;
+			}
+		}
+	}
+	return arr;
+}
+
+2、
+
+public class Employee{
+	private int id;
+	private String name;
+	private String managerName;
+
+	public Employee(){}
+
+	public Employee(int id ,String name;String managerName){
+		id = this.id;
+		name = this.name;
+		managerName = this.managerName;
+	}
+
+	public void show(id,name,managerName){
+		System.out.println(id + " " + name + " " + managerName);	
+	}
+}
+public class test{
+	public static void main(String args[]){
+		Employee employee1 = new Employee(987154,'TOM','William');
+		Employee employee2 = new Employee(987105,'TOM','William');
+		employee1.show();
+		employee2.show();
+	}
+}
+
+
+3、
+(1)
+//根据关键字读取文件内容
+　public static void readTxtFile(String filePath, String key){
+　　try {
+　　String encoding="UTF-8";
+　　File file=new File(filePath);
+　　if(file.isFile() && file.exists()){ //判断文件是否存在
+　　InputStreamReader read = new InputStreamReader(
+　　new FileInputStream(file),encoding);//考虑到编码格式
+　　BufferedReader bufferedReader = new BufferedReader(read);
+　　String lineTxt = null;
+　　while((lineTxt = bufferedReader.readLine()) != null){
+　　System.out.println(lineTxt.indexOf(key));
+　　}
+　　read.close();
+　　}else{
+　　System.out.println("找不到指定的文件");
+　　}
+　　} catch (Exception e) {
+　　System.out.println("读取文件内容出错");
+　　e.printStackTrace();
+　　}
+
+
+(2)//按照格式输出文件
+public static void main(String[] args) {
+  try {
+   // 将filepath文件读取到输入流中
+   InputStream input = new FileInputStream("filepath");
+   // 创建BufferedReader，以gb2312的编码方式读取文件
+   BufferedReader reader = new BufferedReader(new InputStreamReader(input, "gb2312"));
+   String line = null;
+   // 按行读取文本，直到末尾（一般都这么写）
+   while ((line = reader.readLine()) != null) {
+    // 打印当前行字符串
+    System.out.println(line);
+   }
+  } catch (FileNotFoundException e) {
+   e.printStackTrace();
+  } catch (IOException e) {
+   e.printStackTrace();
+  }
+ }
+
+
+(3)//按照格式输出文件
+
+(4)
